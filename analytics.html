@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav>
+    <h2>📍 Smart Queue</h2>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="status.html">Status</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="menu.html">Menu</a>
+        <a href="settings.html">Settings</a>
+    </div>
+</nav>
+
+<div class="card">
+    <h2>People Count (Hourly)</h2>
+    <canvas id="chart"></canvas>
+</div>
+
+<script>
+const ctx = document.getElementById('chart');
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['10AM','11AM','12PM','1PM','2PM'],
+        datasets: [{
+            label: 'People',
+            data: [5, 12, 25, 18, 8],
+            borderWidth: 3
+        }]
+    }
+});
+</script>
+
+</body>
+</html>
