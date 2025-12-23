@@ -1,0 +1,76 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #F1F3F4;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #1A73E8;
+}
+
+.location {
+  color: #5f6368;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#status {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.moderate {
+  color: #F9AB00;
+}
+
+.low {
+  color: #188038;
+}
+
+.high {
+  color: #D93025;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.in {
+  background: #188038;
+  color: white;
+}
+
+.out {
+  background: #D93025;
+  color: white;
+}
+
+footer {
+  margin-top: 20px;
+  color: #5f6368;
+  font-size: 12px;
+}
