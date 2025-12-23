@@ -9,68 +9,74 @@
 
 <div class="app">
 
+  <!-- HEADER -->
   <header>
     <h1>📍 Smart Queue</h1>
-    <p id="location">Canteen – Live Status</p>
+    <span id="headerText">Canteen</span>
   </header>
 
-  <!-- MENU -->
-  <nav>
-    <button onclick="showTab('live')">Live</button>
-    <button onclick="showTab('history')">History</button>
-    <button onclick="showTab('smart')">Smart</button>
-    <button onclick="showTab('location')">Locations</button>
-  </nav>
+  <!-- PAGES -->
+  <main>
 
-  <!-- LIVE TEMPLATE -->
-  <section id="live" class="tab">
-    <div class="card">
-      <h2>👥 Crowd Level</h2>
-      <h3 id="status" class="low">Low</h3>
-      <p id="count">9 People Inside</p>
-    </div>
-
-    <div class="actions">
-      <button class="in" onclick="checkIn()">Check In</button>
-      <button class="out" onclick="checkOut()">Check Out</button>
-    </div>
-  </section>
-
-  <!-- HISTORY TEMPLATE -->
-  <section id="history" class="tab hidden">
-    <div class="card">
-      <h2>📊 Crowd Trend (Today)</h2>
-      <div class="bars">
-        <div style="height:20%">10 AM</div>
-        <div style="height:40%">11 AM</div>
-        <div style="height:80%">12 PM</div>
-        <div style="height:90%">1 PM</div>
-        <div style="height:50%">2 PM</div>
+    <!-- LIVE PAGE -->
+    <section class="page active" id="live">
+      <div class="card big">
+        <h2>Crowd Level</h2>
+        <h3 id="status" class="low">Low</h3>
+        <p id="count">9 People Inside</p>
       </div>
-    </div>
-  </section>
 
-  <!-- SMART TEMPLATE -->
-  <section id="smart" class="tab hidden">
-    <div class="card">
-      <h2>🤖 Smart Suggestion</h2>
-      <p id="suggestion">
-        Best time to visit now – low crowd expected.
-      </p>
-    </div>
-  </section>
+      <div class="action-row">
+        <button class="in" onclick="checkIn()">Check In</button>
+        <button class="out" onclick="checkOut()">Check Out</button>
+      </div>
+    </section>
 
-  <!-- LOCATION TEMPLATE -->
-  <section id="location" class="tab hidden">
-    <div class="card">
-      <h2>📍 Select Location</h2>
-      <select onchange="changeLocation(this.value)">
-        <option>Canteen</option>
-        <option>Library</option>
-        <option>Office</option>
-      </select>
-    </div>
-  </section>
+    <!-- HISTORY PAGE -->
+    <section class="page" id="history">
+      <div class="card">
+        <h2>Today's Crowd</h2>
+        <div class="bars">
+          <span style="height:30%">10</span>
+          <span style="height:50%">11</span>
+          <span style="height:90%">12</span>
+          <span style="height:100%">1</span>
+          <span style="height:60%">2</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SMART PAGE -->
+    <section class="page" id="smart">
+      <div class="card">
+        <h2>Smart Suggestion</h2>
+        <p id="suggestion">
+          Best time to visit now.
+        </p>
+      </div>
+    </section>
+
+    <!-- LOCATION PAGE -->
+    <section class="page" id="location">
+      <div class="card">
+        <h2>Select Location</h2>
+        <select onchange="changeLocation(this.value)">
+          <option>Canteen</option>
+          <option>Library</option>
+          <option>Office</option>
+        </select>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <button onclick="navigate('live')" class="active">🏠</button>
+    <button onclick="navigate('history')">📊</button>
+    <button onclick="navigate('smart')">🤖</button>
+    <button onclick="navigate('location')">⚙️</button>
+  </nav>
 
 </div>
 
