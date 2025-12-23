@@ -1,85 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Smart Queue</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Smart Queue</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app">
+<nav>
+    <h2>📍 Smart Queue</h2>
+    <div class="menu">
+        <a href="index.html">Home</a>
+        <a href="status.html">Status</a>
+        <a href="analytics.html">Analytics</a>
+        <a href="menu.html">Menu</a>
+        <a href="settings.html">Settings</a>
+    </div>
+</nav>
 
-  <!-- HEADER -->
-  <header>
-    <h1>📍 Smart Queue</h1>
-    <span id="headerText">Canteen</span>
-  </header>
+<section class="hero">
+    <h1>Smart Canteen Queue System</h1>
+    <p>Check crowd, avoid rush & save time ⏱️</p>
+    <a href="status.html" class="btn">View Live Status</a>
+</section>
 
-  <!-- PAGES -->
-  <main>
-
-    <!-- LIVE PAGE -->
-    <section class="page active" id="live">
-      <div class="card big">
-        <h2>Crowd Level</h2>
-        <h3 id="status" class="low">Low</h3>
-        <p id="count">9 People Inside</p>
-      </div>
-
-      <div class="action-row">
-        <button class="in" onclick="checkIn()">Check In</button>
-        <button class="out" onclick="checkOut()">Check Out</button>
-      </div>
-    </section>
-
-    <!-- HISTORY PAGE -->
-    <section class="page" id="history">
-      <div class="card">
-        <h2>Today's Crowd</h2>
-        <div class="bars">
-          <span style="height:30%">10</span>
-          <span style="height:50%">11</span>
-          <span style="height:90%">12</span>
-          <span style="height:100%">1</span>
-          <span style="height:60%">2</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SMART PAGE -->
-    <section class="page" id="smart">
-      <div class="card">
-        <h2>Smart Suggestion</h2>
-        <p id="suggestion">
-          Best time to visit now.
-        </p>
-      </div>
-    </section>
-
-    <!-- LOCATION PAGE -->
-    <section class="page" id="location">
-      <div class="card">
-        <h2>Select Location</h2>
-        <select onchange="changeLocation(this.value)">
-          <option>Canteen</option>
-          <option>Library</option>
-          <option>Office</option>
-        </select>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- BOTTOM NAV -->
-  <nav class="bottom-nav">
-    <button onclick="navigate('live')" class="active">🏠</button>
-    <button onclick="navigate('history')">📊</button>
-    <button onclick="navigate('smart')">🤖</button>
-    <button onclick="navigate('location')">⚙️</button>
-  </nav>
-
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
