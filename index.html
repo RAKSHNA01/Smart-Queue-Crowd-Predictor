@@ -1,27 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Smart Queue</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
+<div class="bg-shapes"></div>
+
+<header>
+    📍 <b>Smart Queue</b>
+    <span class="sub">Campus Canteen</span>
+</header>
 
 <nav>
-    <h2>📍 Smart Queue</h2>
-    <div class="menu">
-        <a href="index.html">Home</a>
-        <a href="status.html">Status</a>
-        <a href="analytics.html">Analytics</a>
-        <a href="menu.html">Menu</a>
-        <a href="settings.html">Settings</a>
-    </div>
+    <button onclick="showPage('home')">🏠 Home</button>
+    <button onclick="showPage('status')">👥 Status</button>
+    <button onclick="showPage('analytics')">📊 Analytics</button>
+    <button onclick="showPage('menu')">🍔 Menu</button>
 </nav>
 
-<section class="hero">
-    <h1>Smart Canteen Queue System</h1>
-    <p>Check crowd, avoid rush & save time ⏱️</p>
-    <a href="status.html" class="btn">View Live Status</a>
+<!-- HOME -->
+<section id="home" class="page active">
+    <div class="card">
+        <h2>Welcome 👋</h2>
+        <p>This smart system helps students avoid long queues by checking live crowd levels.</p>
+    </div>
 </section>
 
+<!-- STATUS -->
+<section id="status" class="page">
+    <div class="card">
+        <h2>Crowd Level</h2>
+        <h3 id="level" class="low">LOW</h3>
+        <p><b><span id="count">9</span></b> People Inside</p>
+    </div>
+
+    <div class="actions">
+        <button class="green" onclick="checkIn()">Check In</button>
+        <button class="red" onclick="checkOut()">Check Out</button>
+    </div>
+</section>
+
+<!-- ANALYTICS -->
+<section id="analytics" class="page">
+    <div class="card">
+        <h2>Peak Hours</h2>
+        <canvas id="chart"></canvas>
+    </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="page">
+    <div class="card">
+        <h2>Today's Menu 🍽️</h2>
+        <ul>
+            <li>🍕 Pizza</li>
+            <li>🥪 Sandwich</li>
+            <li>🍜 Noodles</li>
+            <li>🥤 Juice</li>
+        </ul>
+    </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
