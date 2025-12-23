@@ -1,34 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Smart Queue</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
-    <h1>📍 Smart Queue</h1>
-    <p class="location">Canteen - Live Status</p>
+<div class="app">
 
+  <header>
+    <h1>📍 Smart Queue</h1>
+    <p id="location">Canteen – Live Status</p>
+  </header>
+
+  <!-- MENU -->
+  <nav>
+    <button onclick="showTab('live')">Live</button>
+    <button onclick="showTab('history')">History</button>
+    <button onclick="showTab('smart')">Smart</button>
+    <button onclick="showTab('location')">Locations</button>
+  </nav>
+
+  <!-- LIVE TEMPLATE -->
+  <section id="live" class="tab">
     <div class="card">
       <h2>👥 Crowd Level</h2>
-      <p id="status" class="moderate">Moderate</p>
-      <p id="count">24 People Inside</p>
+      <h3 id="status" class="low">Low</h3>
+      <p id="count">9 People Inside</p>
     </div>
 
-    <div class="card">
-      <h2>⏰ Peak Hours</h2>
-      <p>12:30 PM – 2:00 PM</p>
-    </div>
-
-    <div class="buttons">
+    <div class="actions">
       <button class="in" onclick="checkIn()">Check In</button>
       <button class="out" onclick="checkOut()">Check Out</button>
     </div>
+  </section>
 
-    <footer>Updates every minute</footer>
-  </div>
+  <!-- HISTORY TEMPLATE -->
+  <section id="history" class="tab hidden">
+    <div class="card">
+      <h2>📊 Crowd Trend (Today)</h2>
+      <div class="bars">
+        <div style="height:20%">10 AM</div>
+        <div style="height:40%">11 AM</div>
+        <div style="height:80%">12 PM</div>
+        <div style="height:90%">1 PM</div>
+        <div style="height:50%">2 PM</div>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- SMART TEMPLATE -->
+  <section id="smart" class="tab hidden">
+    <div class="card">
+      <h2>🤖 Smart Suggestion</h2>
+      <p id="suggestion">
+        Best time to visit now – low crowd expected.
+      </p>
+    </div>
+  </section>
+
+  <!-- LOCATION TEMPLATE -->
+  <section id="location" class="tab hidden">
+    <div class="card">
+      <h2>📍 Select Location</h2>
+      <select onchange="changeLocation(this.value)">
+        <option>Canteen</option>
+        <option>Library</option>
+        <option>Office</option>
+      </select>
+    </div>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
