@@ -10,15 +10,15 @@ function updateUI() {
   if (count <= 10) {
     status.innerText = "Low";
     status.className = "low";
-    suggestion.innerText = "Best time to visit now – minimal waiting.";
+    suggestion.innerText = "Best time to visit now.";
   } else if (count <= 25) {
     status.innerText = "Moderate";
     status.className = "moderate";
-    suggestion.innerText = "Moderate crowd – short waiting time.";
+    suggestion.innerText = "Moderate crowd – short wait.";
   } else {
     status.innerText = "High";
     status.className = "high";
-    suggestion.innerText = "High crowd – try after peak hours.";
+    suggestion.innerText = "Crowded now – try later.";
   }
 }
 
@@ -32,13 +32,20 @@ function checkOut() {
   updateUI();
 }
 
-function showTab(tab) {
-  document.querySelectorAll(".tab").forEach(t => t.classList.add("hidden"));
-  document.getElementById(tab).classList.remove("hidden");
+function navigate(page) {
+  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  document.querySelectorAll(".bottom-nav button")
+    .forEach(b => b.classList.remove("active"));
+
+  document.getElementById(page).classList.add("active");
+
+  const index = ["live","history","smart","location"].indexOf(page);
+  document.querySelectorAll(".bottom-nav button")[index]
+    .classList.add("active");
 }
 
 function changeLocation(loc) {
-  document.getElementById("location").innerText = loc + " – Live Status";
+  document.getElementById("headerText").innerText = loc;
 }
 
 updateUI();
